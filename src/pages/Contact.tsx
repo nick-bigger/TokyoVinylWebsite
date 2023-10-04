@@ -38,11 +38,11 @@ export const Contact = () => {
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger>
         <div className="fixed bottom-8 right-8 z-10">
-          <Button><Mail className="w-5 mr-3" onClick={() => setOpen(true)}/>Contact</Button>
+          <Button><Mail className="mr-3 w-5" onClick={() => setOpen(true)}/>Contact</Button>
         </div>
       </SheetTrigger>
       <SheetContent>
-        <p className="mt-5 mb-10">Want to reach out ? We'd love to hear from you ! But please, let's keep this
+        <p className="mb-10 mt-5">Want to reach out ? We'd love to hear from you ! But please, let's keep this
           professional... or at least
           interesting.</p>
         <div className="space-y-6">

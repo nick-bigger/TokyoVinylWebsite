@@ -13,23 +13,23 @@ import { Outlet } from 'react-router-dom';
 
 export const Layout = () => (
   <div className="min-h-[100vh]">
-    <div className="absolute top-0 overflow-hidden w-full h-[200px] z-[-1]">
+    <div className="absolute top-0 z-[-1] h-[200px] w-full overflow-hidden">
       <img
         src={HeaderBackground}
-        className="absolute inset-0 w-full h-full object-cover z-[-1]"
+        className="absolute inset-0 z-[-1] h-full w-full object-cover"
       />
     </div>
     <MainNav className="mb-20" />
-    <div className="absolute rotate-12 z-[-1] top-[-50px] right-[-50px] w-[200px] md:top-[-50px] md:right-[-50x] md:w-[300px] lg:top-[-130px] lg:right-[-100px] lg:w-[500px] xl:top-[-130px] xl:right-[-100px] xl:w-[600px]">
+    <div className="absolute right-[-50px] top-[-50px] z-[-1] w-[200px] rotate-12 md:right-[-50x] md:top-[-50px] md:w-[300px] lg:right-[-100px] lg:top-[-130px] lg:w-[500px] xl:right-[-100px] xl:top-[-130px] xl:w-[600px]">
       <img src={record} />
     </div>
-    <div className="flex-col min-h-full">
-      <div className="flex flex-col gap-5 items-center">
-        <div className="flex flex-col gap-5 items-center">
+    <div className="min-h-full flex-col">
+      <div className="flex flex-col items-center gap-5">
+        <div className="flex flex-col items-center gap-5">
           <div className="w-60">
             <Logo title="Logo" />
           </div>
-          <div className="h-5 flex gap-3">
+          <div className="flex h-5 gap-3">
             <p>Est. 2023</p>
             <Separator orientation="vertical" />
             <p>Lost In Austin</p>
@@ -59,16 +59,16 @@ export const Layout = () => (
           </div>
         </div>
       </div>
-      <div className="space-y-20 max-w-screen-xl flex m-auto">
+      <div className="m-auto flex max-w-screen-xl space-y-20">
         <Outlet />
       </div>
       <Contact />
       <Toaster />
     </div>
-    <div className="relative bottom-0 overflow-hidden w-full h-[200px] z-[-1]">
+    <div className="relative bottom-0 z-[-1] h-[200px] w-full overflow-hidden">
       <img
         src={HeaderBackground}
-        className="w-full h-full object-cover rotate-180"
+        className="h-full w-full rotate-180 object-cover"
       />
     </div>
   </div>

@@ -11,14 +11,14 @@ export const Home = () => {
   return (
     <>
       <div className="flex flex-wrap">
-        <div className="order-2 w-full md:w-1/3 lg:w-1/3 p-5">
+        <div className="order-2 w-full p-5 md:w-1/3 lg:w-1/3">
           <Card>
             <CardHeader>
               <CardTitle>Listen</CardTitle>
               <CardDescription>to our music !</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex gap-5 flex-col items-center">
+              <div className="flex flex-col items-center gap-5">
                 <iframe
                   allow="autoplay *; encrypted-media *;"
                   height="152"
@@ -44,7 +44,7 @@ export const Home = () => {
             </CardContent>
           </Card>
         </div>
-        <div className="order-1 w-full md:w-2/3 lg:w-2/3 p-5">
+        <div className="order-1 w-full p-5 md:w-2/3 lg:w-2/3">
           <Card>
             <CardHeader>
               <CardTitle>Pictures</CardTitle>

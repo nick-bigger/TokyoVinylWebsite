@@ -24,7 +24,7 @@ export const Carousel = () => {
     emblaApi.on('reInit', onInit);
     emblaApi.on('reInit', onSelect)
     emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect])
+  }, [emblaApi, onSelect, onInit])
 
   return (
     <>

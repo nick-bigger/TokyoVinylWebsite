@@ -2,7 +2,7 @@ import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert.tsx";
 import { Music } from "lucide-react";
 
 export const Schedule = () => (
-  <div className="flex flex-col m-auto mt-10 p-5 gap-5">
+  <div className="m-auto mt-10 flex flex-col gap-5 p-5">
     <Alert>
       <Music className="h-4 w-4" />
       <AlertTitle>09/23 - Soiled Dove</AlertTitle>
