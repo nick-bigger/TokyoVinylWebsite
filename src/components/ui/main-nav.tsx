@@ -1,6 +1,5 @@
 import {cn} from "@/lib/utils"
-import {Link} from "@tanstack/react-router";
-
+import { Link } from 'react-router-dom';
 export function MainNav({
                           className,
                           ...props
@@ -12,27 +11,27 @@ export function MainNav({
     >
       <div className="flex space-x-4">
         <Link
-          activeProps={{
-            className: 'text-primary',
-          }}
+          // activeProps={{
+          //   className: 'text-primary',
+          // }}
           className="text-sm text-muted font-bold transition-colors"
           to="/"
         >
           Home
         </Link>
         <Link
-          activeProps={{
-            className: 'text-primary',
-          }}
+          // activeProps={{
+          //   className: 'text-primary',
+          // }}
           className="text-sm text-muted font-bold transition-colors"
           to="/schedule"
         >
           Schedule
         </Link>
         <Link
-          activeProps={{
-            className: 'text-primary',
-          }}
+          // activeProps={{
+          //   className: 'text-primary',
+          // }}
           className="text-sm text-muted font-bold transition-colors"
           to="/about"
         >
