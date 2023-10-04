@@ -1,4 +1,4 @@
-[] remove favicon
-[] setup routes
+[x] remove favicon
+[x] setup routes
 [] revise tailwind
 [] s d
