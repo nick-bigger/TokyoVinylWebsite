@@ -5,11 +5,6 @@ import { PropsWithChildren, useCallback, useEffect, useState } from "react";
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({align: 'center', containScroll: false})
   const [selectedIndex, setSelectedIndex] = useState(0);
-  const [scrollSnaps, setScrollSnaps] = useState<number[]>([]);
-
-  const onInit = useCallback((emblaApi: EmblaCarouselType) => {
-    setScrollSnaps(emblaApi.scrollSnapList())
-  }, [])
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
     setSelectedIndex(emblaApi.selectedScrollSnap());
@@ -18,12 +13,10 @@ export const Carousel = () => {
   useEffect(() => {
     if (!emblaApi) return
 
-    onInit(emblaApi);
     onSelect(emblaApi);
-    emblaApi.on('reInit', onInit);
     emblaApi.on('reInit', onSelect)
     emblaApi.on('select', onSelect)
-  }, [emblaApi, onSelect, onInit])
+  }, [emblaApi, onSelect])
 
   return (
     <>
@@ -39,19 +32,7 @@ export const Carousel = () => {
         </div>
       </div>
       <div className="embla__dots">
-        {scrollSnaps.map((_, index) => (
-          <DotButton
-            key={index}
-            onClick={() => {
-              // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-              // @ts-ignore
-              scrollTo(index)
-            }}
-            className={'embla__dot'.concat(
-              index === selectedIndex ? ' embla__dot--selected' : ''
-            )}
-          />
-        ))}
+        {selectedIndex+1}/{images.length}
       </div>
     </>
   )
