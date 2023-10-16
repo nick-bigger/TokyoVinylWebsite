@@ -1,7 +1,6 @@
-import useEmblaCarousel, {EmblaCarouselType} from 'embla-carousel-react'
-import Carousel1 from "@/assets/carousel1.jpg";
-import Carousel2 from "@/assets/carousel2.jpg";
-import {PropsWithChildren, useCallback, useEffect, useState} from "react";
+import { images } from "@/assets/carousel/images";
+import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
+import { PropsWithChildren, useCallback, useEffect, useState } from "react";
 
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({align: 'center', containScroll: false})
@@ -31,24 +30,11 @@ export const Carousel = () => {
       <div className="embla">
         <div className="embla__viewport" ref={emblaRef}>
           <div className="embla__container">
-            <div className="embla__slide">
-              <div className="embla__slide__number">
-                <span>1</span>
+            {images.map((image) => (
+              <div className="embla__slide">
+                <img className="embla__slide__img" src={image.src}/>
               </div>
-              <img className="embla__slide__img" src={Carousel1}/>
-            </div>
-            <div className="embla__slide">
-              <div className="embla__slide__number">
-                <span>2</span>
-              </div>
-              <img className="embla__slide__img" src={Carousel2}/>
-            </div>
-            <div className="embla__slide">
-              <div className="embla__slide__number">
-                <span>3</span>
-              </div>
-              <img className="embla__slide__img" src={Carousel1}/>
-            </div>
+            ))}
           </div>
         </div>
       </div>

@@ -1,9 +1,10 @@
-import path from "path";
 import react from "@vitejs/plugin-react";
-import {defineConfig} from "vite";
+import path from "path";
+import { defineConfig } from "vite";
 import svgrPlugin from 'vite-plugin-svgr';
 
 export default defineConfig({
+  assetsInclude: ["**/*.m4a"],
   plugins: [
     react(),
     svgrPlugin(),

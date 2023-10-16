@@ -9,16 +9,16 @@
     }
 
     :root {
-        --background: 35, 54%, 84%;
-        --foreground: 0, 0%, 15%;
+        --background: 35 54% 84%;
+        --foreground: 0 0% 15%;
 
-        --card: 35, 54%, 84%;
-        --card-foreground: 0, 0%, 15%;
+        --card: 35 54% 84%;
+        --card-foreground: 0 0% 15%;
 
         --popover: 0 0% 100%;
         --popover-foreground: 222.2 84% 4.9%;
 
-        --primary: 353, 93%, 30%;
+        --primary: 353 93% 30%;
         --primary-foreground: 210 40% 98%;
 
         --secondary: 210 40% 96.1%;
@@ -33,8 +33,8 @@
         --destructive: 0 84.2% 60.2%;
         --destructive-foreground: 210 40% 98%;
 
-        --border: 0, 0%, 15%;
-        --input: 0, 0%, 15%;
+        --border: 0 0% 15%;
+        --input: 0 0% 15%;
         --ring: 222.2 84% 4.9%;
 
         --radius: 0.5rem;
@@ -54,11 +54,13 @@
 body {
     font-family: RockSalt;
     overflow-x: hidden;
+    overscroll-behavior-y: none;
     position: relative;
 }
 
 html {
     overflow-x: hidden;
+    overscroll-behavior-y: none;
 }
 
 .embla {
@@ -196,7 +198,7 @@ html {
 }
 
 .embla__dot:after {
-    background: white;
+    background: lightgrey;
     border-radius: 0.2rem;
     width: 100%;
     height: 0.3rem;

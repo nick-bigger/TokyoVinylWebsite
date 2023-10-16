@@ -1,4 +1,4 @@
-import { Carousel } from "@/components/ui/carousel.tsx";
+import { AudioPlayer } from "@/components/AudioPlayer";
 import {
   Card,
   CardContent,
@@ -6,6 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card.tsx";
+import { Carousel } from "@/components/ui/carousel.tsx";
 
 export const Home = () => {
   return (
@@ -18,29 +19,7 @@ export const Home = () => {
               <CardDescription>to our music !</CardDescription>
             </CardHeader>
             <CardContent>
-              <div className="flex flex-col items-center gap-5">
-                <iframe
-                  allow="autoplay *; encrypted-media *;"
-                  height="152"
-                  style={{
-                    width: "100%",
-                    overflow: "hidden",
-                    background: "transparent",
-                    borderRadius: "6px",
-                  }}
-                  sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation"
-                  src="https://embed.music.apple.com/us/album/is-this-it/266376953"
-                ></iframe>
-                <iframe
-                  className="rounded-lg"
-                  src="https://open.spotify.com/embed/album/2k8KgmDp9oHrmu0MIj4XDE?utm_source=generator"
-                  width="100%"
-                  height="152"
-                  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                  allowFullScreen
-                  loading="lazy"
-                ></iframe>
-              </div>
+              <AudioPlayer />
             </CardContent>
           </Card>
         </div>
