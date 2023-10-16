@@ -1,15 +1,23 @@
-import { MainNav } from "@/components/ui/main-nav.tsx";
-import Logo from "../assets/logo.svg?react";
-import { Button } from "@/components/ui/button.tsx";
-import { Contact } from "@/pages/Contact.tsx";
 import HeaderBackground from "@/assets/header.png";
-import InstagramLogo from "../assets/Instagram_Glyph_White.svg?react";
-import XLogo from "../assets/x-logo.svg?react";
-import TikTokLogo from "../assets/tiktok-logo.svg?react";
+import { Button } from "@/components/ui/button.tsx";
+import { MainNav } from "@/components/ui/main-nav.tsx";
 import { Separator } from "@/components/ui/separator.tsx";
-import record from "../assets/record.png";
 import { Toaster } from "@/components/ui/toaster.tsx";
+import { Contact } from "@/pages/Contact.tsx";
 import { Outlet } from 'react-router-dom';
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import InstagramLogo from "../assets/Instagram_Glyph_White.svg?react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import Logo from "../assets/logo.svg?react";
+import record from "../assets/record.png";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import TikTokLogo from "../assets/tiktok-logo.svg?react";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+import XLogo from "../assets/x-logo.svg?react";
 
 export const Layout = () => (
   <div className="min-h-[100vh]">

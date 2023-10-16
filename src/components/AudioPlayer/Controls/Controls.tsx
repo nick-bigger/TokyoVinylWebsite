@@ -17,16 +17,9 @@ function formatDurationDisplay(duration: number) {
 interface ControlsProps {
   currentSong?: { title: string; src: string };
   songCount: number;
-  onNext: () => void;
-  onPrev: () => void;
 }
 
-export const Controls = ({
-  currentSong,
-  songCount,
-  onNext,
-  onPrev,
-}: ControlsProps) => {
+export const Controls = ({ currentSong, songCount }: ControlsProps) => {
   const context = useContext(AudioPlayerContext);
   const audioRef = useRef<HTMLAudioElement | null>(null);
 
@@ -53,11 +46,11 @@ export const Controls = ({
   }, [context.currentSongIndex]);
 
   const handleNext = () => {
-    onNext();
+    context.setCurrentSongIndex((prevValue) => prevValue + 1);
   };
 
   const handlePrev = () => {
-    onPrev();
+    context.setCurrentSongIndex((prevValue) => prevValue - 1);
   };
 
   const togglePlayPause = () => {

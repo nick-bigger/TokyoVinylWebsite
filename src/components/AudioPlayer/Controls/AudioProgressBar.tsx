@@ -26,6 +26,7 @@ export const AudioProgressBar = ({ duration, currentProgress, buffered }: AudioP
   return (
     <div className="group absolute inset-x-0 top-[-4px] h-1">
       <input
+        readOnly
         type="range"
         name="progress"
         className={`absolute inset-0 m-0 h-full w-full cursor-pointer appearance-none bg-transparent transition-all before:absolute before:inset-0 before:h-full before:w-full before:origin-left before:bg-primary after:absolute after:h-full after:w-full after:bg-primary/50 hover:bg-primary group-hover:h-2 dark:bg-gray-700`}

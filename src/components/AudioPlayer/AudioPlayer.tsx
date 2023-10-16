@@ -23,8 +23,6 @@ export const AudioPlayer = () => {
           <Controls
             currentSong={currentSong}
             songCount={songs.length}
-            onNext={() => setCurrentSongIndex((i) => i + 1)}
-            onPrev={() => setCurrentSongIndex((i) => i - 1)}
             />
       </div>
     </div>
