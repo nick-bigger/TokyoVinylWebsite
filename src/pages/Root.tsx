@@ -17,6 +17,9 @@ import record from "../assets/record.png";
 import TikTokLogo from "../assets/tiktok-logo.svg?react";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
 import XLogo from "../assets/x-logo.svg?react";
 
 export const Layout = () => (
@@ -43,31 +46,54 @@ export const Layout = () => (
             <p>Lost In Austin</p>
           </div>
           <div className="flex gap-5">
-            <Button
-              onClick={() =>
-                window.open("https://www.instagram.com/tokyo.vinyl/", "_blank")
-              }
-            >
-              <InstagramLogo className="h-5 w-5" />
-            </Button>
-            <Button
-              onClick={() =>
-                window.open("https://twitter.com/tokyo_vinyl", "_blank")
-              }
-            >
-              <XLogo className="h-5 w-5" />
-            </Button>
-            <Button
-              onClick={() =>
-                window.open("https://www.tiktok.com/@tokyo.vinyl", "_blank")
-              }
-            >
-              <TikTokLogo className="h-5 w-5" />
-            </Button>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button onClick={() => window.open("https://www.instagram.com/tokyo.vinyl/", "_blank")}>
+                    <InstagramLogo className="h-5 w-5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Instagram</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button
+                    onClick={() =>
+                      window.open("https://twitter.com/tokyo_vinyl", "_blank")
+                    }
+                  >
+                    <XLogo className="h-5 w-5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Twitter</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
+            <TooltipProvider>
+              <Tooltip>
+                <TooltipTrigger>
+                  <Button
+                    onClick={() =>
+                      window.open("https://www.tiktok.com/@tokyo.vinyl", "_blank")
+                    }
+                  >
+                    <TikTokLogo className="h-5 w-5" />
+                  </Button>
+                </TooltipTrigger>
+                <TooltipContent>
+                  <p>Tik Tok</p>
+                </TooltipContent>
+              </Tooltip>
+            </TooltipProvider>
           </div>
         </div>
       </div>
-      <div className="m-auto flex max-w-screen-xl space-y-20">
+      <div className="m-auto max-w-screen-xl space-y-20">
         <Outlet />
       </div>
       <Contact />
