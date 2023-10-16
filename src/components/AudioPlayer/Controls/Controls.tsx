@@ -1,15 +1,15 @@
-import { Disc3, Pause, Play, SkipBack, SkipForwardIcon } from 'lucide-react';
-import * as React from 'react';
-import { useContext, useEffect, useRef, useState } from 'react';
-import { AudioPlayerContext } from '..';
+import { Disc3, Pause, Play, SkipBack, SkipForwardIcon } from "lucide-react";
+import * as React from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import { AudioPlayerContext } from "..";
 import { Button } from "../../ui/button";
-import { AudioProgressBar } from './AudioProgressBar';
+import { AudioProgressBar } from "./AudioProgressBar";
 
 function formatDurationDisplay(duration: number) {
   const min = Math.floor(duration / 60);
   const sec = Math.floor(duration - min * 60);
 
-  const formatted = [min, sec].map((n) => (n < 10 ? '0' + n : n)).join(':');
+  const formatted = [min, sec].map((n) => (n < 10 ? "0" + n : n)).join(":");
 
   return formatted;
 }
@@ -25,18 +25,20 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
 
   const [isReady, setIsReady] = useState(false);
   const [duration, setDuration] = useState(0);
-  const [currrentProgress, setCurrentProgress] = useState(0);
+  const [currentProgress, setCurrentProgress] = useState(0);
   const [buffered, setBuffered] = useState(0);
   const [volume, setVolume] = useState(0.2);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const durationDisplay = formatDurationDisplay(duration);
-  const elapsedDisplay = formatDurationDisplay(currrentProgress);
+  const elapsedDisplay = formatDurationDisplay(currentProgress);
 
   useEffect(() => {
     audioRef.current?.pause();
+    resetForNewSong();
 
     const timeout = setTimeout(() => {
+      audioRef.current?.load();
       audioRef.current?.play();
     }, 500);
 
@@ -45,12 +47,21 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
     };
   }, [context.currentSongIndex]);
 
+  const resetForNewSong = () => {
+    setDuration(0);
+    setCurrentProgress(0);
+    setBuffered(0);
+    setIsReady(false);
+  };
+
   const handleNext = () => {
     context.setCurrentSongIndex((prevValue) => prevValue + 1);
+    resetForNewSong();
   };
 
   const handlePrev = () => {
     context.setCurrentSongIndex((prevValue) => prevValue - 1);
+    resetForNewSong();
   };
 
   const togglePlayPause = () => {
@@ -110,7 +121,7 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
       )}
       <AudioProgressBar
         duration={duration}
-        currentProgress={currrentProgress}
+        currentProgress={currentProgress}
         buffered={buffered}
         onChange={(e) => {
           if (!audioRef.current) return;
@@ -127,9 +138,7 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
 
       <div className="flex flex-col items-center justify-center">
         <div className="mb-1 text-center">
-          <p className="font-bold">
-            {currentSong?.title ?? 'Select a song'}
-          </p>
+          <p className="font-bold">{currentSong?.title ?? "Select a song"}</p>
         </div>
       </div>
       <div className="mt-4 flex items-center justify-center gap-4">
@@ -140,11 +149,7 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
         >
           <SkipBack size={24} />
         </Button>
-        <Button
-          disabled={!isReady}
-          onClick={togglePlayPause}
-          size="icon"
-        >
+        <Button disabled={!isReady} onClick={togglePlayPause} size="icon">
           {!isReady && currentSong ? (
             <Disc3 size={24} className="animate-spin" />
           ) : isPlaying ? (
@@ -163,4 +168,4 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
       </div>
     </div>
   );
-}
+};
