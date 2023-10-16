@@ -9,8 +9,8 @@ import NickAndNatalie1 from "./NickAndNatalie1.jpg";
 import NickAndNatalie2 from "./NickAndNatalie2.jpg";
 
 export const images = [
-  { name: "Full Band 1", src: FullBand1 },
   { name: "Full Band 2", src: FullBand2 },
+  { name: "Full Band 1", src: FullBand1 },
   { name: "Kevin 1", src: Kevin1 },
   { name: "Nick 1", src: Nick1 },
   { name: "Nick And Natalie 1", src: NickAndNatalie1 },
