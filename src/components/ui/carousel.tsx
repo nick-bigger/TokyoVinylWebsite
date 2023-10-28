@@ -1,13 +1,19 @@
 import { images } from "@/assets/carousel/images";
 import useEmblaCarousel, { EmblaCarouselType } from 'embla-carousel-react';
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { PropsWithChildren, useCallback, useEffect, useState } from "react";
+import { Button } from "./button";
 
 export const Carousel = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({align: 'center', containScroll: false})
   const [selectedIndex, setSelectedIndex] = useState(0);
+  const [prevBtnDisabled, setPrevBtnDisabled] = useState(true)
+  const [nextBtnDisabled, setNextBtnDisabled] = useState(true)
 
   const onSelect = useCallback((emblaApi: EmblaCarouselType) => {
-    setSelectedIndex(emblaApi.selectedScrollSnap());
+    setSelectedIndex(emblaApi.selectedScrollSnap())
+    setPrevBtnDisabled(!emblaApi.canScrollPrev())
+    setNextBtnDisabled(!emblaApi.canScrollNext())
   }, [])
 
   useEffect(() => {
@@ -17,6 +23,15 @@ export const Carousel = () => {
     emblaApi.on('reInit', onSelect)
     emblaApi.on('select', onSelect)
   }, [emblaApi, onSelect])
+
+  const scrollPrev = useCallback(
+    () => emblaApi && emblaApi.scrollPrev(),
+    [emblaApi]
+  )
+  const scrollNext = useCallback(
+    () => emblaApi && emblaApi.scrollNext(),
+    [emblaApi]
+  )
 
   return (
     <>
@@ -33,6 +48,10 @@ export const Carousel = () => {
       </div>
       <div className="embla__dots">
         {selectedIndex+1}/{images.length}
+      </div>
+      <div className="mt-3 flex justify-center gap-2">
+        <Button onClick={scrollPrev} disabled={prevBtnDisabled}><ArrowLeft /></Button>
+        <Button onClick={scrollNext} disabled={nextBtnDisabled}><ArrowRight /></Button>
       </div>
     </>
   )
