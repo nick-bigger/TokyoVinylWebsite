@@ -117,6 +117,7 @@ export const Controls = ({ currentSong, songCount }: ControlsProps) => {
           onVolumeChange={(e) => setVolume(e.currentTarget.volume)}
         >
           <source type="audio/x-m4a" src={currentSong.src} />
+          <source type="audio/mp3" src={currentSong.src} />
         </audio>
       )}
       <AudioProgressBar
