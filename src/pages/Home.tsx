@@ -9,8 +9,6 @@ import {
 import { Carousel } from "@/components/ui/carousel.tsx";
 
 export const Home = () => {
-
-
   return (
     <>
       <div className="flex flex-wrap">
@@ -18,14 +16,14 @@ export const Home = () => {
           <Card>
             <CardHeader>
               <CardTitle>Listen</CardTitle>
-              <CardDescription>to our music !</CardDescription>
+              <CardDescription>to our demos !</CardDescription>
             </CardHeader>
             <CardContent>
               <AudioPlayer />
             </CardContent>
           </Card>
         </div>
-        <div className="order-1 w-full p-5 md:w-2/3 lg:w-2/3">
+        <div className="order-1 h-fit w-full p-5 md:w-2/3 lg:w-2/3">
           <Card className="h-full">
             <CardHeader>
               <CardTitle>Pictures</CardTitle>
@@ -40,7 +38,8 @@ export const Home = () => {
       <div className="m-auto flex flex-col gap-5 px-5">
         <div>
           <blockquote className="mt-6 border-l-2 pl-6 italic">
-            "10/10. My only complaint is how often I had to wipe away tears from such a moving performance."
+            "10/10. My only complaint is how often I had to wipe away tears from
+            such a moving performance."
           </blockquote>
           <p className="mt-2 text-xs font-bold">Rolling Stone Magazine</p>
         </div>
@@ -71,4 +70,4 @@ export const Home = () => {
       </div>
     </>
   );
-}
+};
