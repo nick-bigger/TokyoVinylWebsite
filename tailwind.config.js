@@ -131,7 +131,9 @@ module.exports = {
         "wave-pulse": "wave-pulse 1.5s ease-in-out infinite",
       },
       fontFamily: {
-        "cnc-ra": ["C&C Red Alert", "cursive", "sans-serif"],
+        blackout: ["Blackout"],
+        midnight: ["Midnight"],
+        sunrise: ["Sunrise"],
       },
     },
   },

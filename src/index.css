@@ -1,3 +1,27 @@
+@font-face {
+  font-family: "Blackout";
+  src: url("/fonts/blackout-2-am.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Midnight";
+  src: url("/fonts/blackout-midnight.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Sunrise";
+  src: url("/fonts/blackout-sunrise.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -65,7 +89,7 @@
   }
   html {
     overscroll-behavior: none;
-    font-family: "C&C Red Alert", sans-serif;
+    font-family: "Blackout", sans-serif;
   }
   body {
     @apply bg-background text-foreground;
