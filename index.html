@@ -1,29 +1,51 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8"/>
-    <link rel="icon" type="image/svg+xml" href="/logo-minimal.png"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Tokyo Vinyl</title>
-</head>
-<body>
-<div id="root"></div>
-<script type="module" src="/src/main.tsx"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-V7NFFP3C6Y"></script>
-<script>
-  const host = window.location.hostname;
-  if (host !== "localhost" && host !== "127.0.0.1") {
-    window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-      dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-
-    gtag('config', 'G-V7NFFP3C6Y');
-  }
-</script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="og:title" content="tokyo vinyl" />
+    <meta
+      name="og:description"
+      content="the official website for tokyo vinyl"
+    />
+    <meta name="msapplication-TileColor" content="#111827" />
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#111827"
+      media="(prefers-color-scheme: dark)"
+    />
+    <title>tokyo vinyl</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebSite",
+            "@id": "https://tokyovinylband.com/#website",
+            "url": "https://tokyovinylband.com",
+            "name": "Tokyo Vinyl",
+            "description": "the official website for tokyo vinyl",
+            "potentialAction": {
+              "@type": "SearchAction",
+              "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": "https://tokyovinylband.com/?s={search_term_string}"
+              },
+              "query-input": "required name=search_term_string"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
 </html>
