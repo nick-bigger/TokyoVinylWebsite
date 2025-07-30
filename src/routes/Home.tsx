@@ -3,24 +3,31 @@ import { Link } from "react-router-dom";
 export const Home = () => {
   return (
     <div className="relative h-screen w-screen flex items-center justify-center overflow-hidden p-4">
-      <Link to="music" className="absolute top-4 text-2xl text-white z-10">
+      <Link
+        to="music"
+        className="absolute top-4 text-2xl text-white z-10"
+        unstable_viewTransition
+      >
         music
       </Link>
       <Link
         to="epk"
         className="absolute right-4 top-1/2 -translate-y-1/2 text-white rotate-90 origin-right pr-4 z-10 text-2xl"
+        unstable_viewTransition
       >
         epk
       </Link>
       <Link
-        to="about"
+        to="schedule"
         className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl text-white -rotate-90 origin-left pl-4 z-10"
+        unstable_viewTransition
       >
-        about
+        schedule
       </Link>
       <Link
         to="social"
         className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl text-white z-10"
+        unstable_viewTransition
       >
         social
       </Link>

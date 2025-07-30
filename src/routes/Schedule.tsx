@@ -2,17 +2,17 @@ import { Link } from "react-router-dom";
 
 import { H1 } from "@/components/Typography";
 
-export const Music = () => {
+export const Schedule = () => {
   return (
     <div className="relative h-screen w-screen p-10">
       <Link
         to="/"
-        className="absolute bottom-4 left-1/2 -translate-x-1/2 text-2xl text-white z-10"
+        className="absolute right-4 top-1/2 -translate-y-1/2 text-white rotate-90 origin-right pr-4 z-10 text-2xl"
         unstable_viewTransition
       >
         home
       </Link>
-      <H1 className="mb-8">Music</H1>
+      <H1 className="mb-8">Schedule</H1>
     </div>
   );
 };

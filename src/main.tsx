@@ -7,11 +7,11 @@ import { RouterProvider, createHashRouter } from "react-router-dom";
 import { ThemeProvider } from "./components/theme-provider";
 import { Toaster } from "./components/ui/sonner";
 import "./index.css";
-import { About } from "./routes/About";
 import { EPK } from "./routes/EPK";
 import { Home } from "./routes/Home";
 import { Music } from "./routes/Music";
 import { Root } from "./routes/Root";
+import { Schedule } from "./routes/Schedule";
 import { Socials } from "./routes/Socials";
 
 const queryClient = new QueryClient({
@@ -30,8 +30,8 @@ const router = createHashRouter([
     children: [
       { path: "epk", element: <EPK /> },
       { path: "music", element: <Music /> },
-      { path: "socials", element: <Socials /> },
-      { path: "about", element: <About /> },
+      { path: "social", element: <Socials /> },
+      { path: "schedule", element: <Schedule /> },
       { path: "", element: <Home /> },
     ],
   },
